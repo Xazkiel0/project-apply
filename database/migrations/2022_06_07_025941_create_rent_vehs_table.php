@@ -14,10 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('rent_vehs', function (Blueprint $table) {
-            $table->id();
-            $table->string('owner');
+            $table->string('id')->primary();
+            $table->string('name');
+            $table->string('brand');
+            $table->enum('carry',['person','material']);
+            $table->string('owner')->default('Perusahaan 1');
             $table->date('rent_till');
-            $table->string('contact');
+            $table->string('contact')->nullable();
             $table->timestamps();
         });
     }

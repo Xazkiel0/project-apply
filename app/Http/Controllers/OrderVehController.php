@@ -32,12 +32,16 @@ class OrderVehController extends Controller
     }
     public function addProgress(OrderVeh $orderVeh)
     {
-        // OrderVeh::find(5)->update(["progress"=>intval($orderVeh->progress)+1]);
-        // return OrderVeh::find(5);
         $orderVeh->update(["progress"=>intval($orderVeh->progress)+1]);
 
         return redirect()->back();
         //
+    }
+    public function decline(OrderVeh $orderVeh)
+    {
+        $orderVeh->update(["progress"=>-1]);
+
+        return redirect()->back();
     }
 
     /**

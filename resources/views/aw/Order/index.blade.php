@@ -64,17 +64,16 @@
                           <span class="text-secondary text-xs font-weight-bold">{{date('Y-m-d',strtotime($d->created_at))}}</span>
                         </td>
                         <td class="align-middle">
-                          @if ($d->progress < 1 && auth()->user()->role == "Approver")
-                          {{-- <form action="{{url('addProgress/'.$d->id)}}" method="post"></form> --}}
-                          <a href="addProgress/{{$d->id}}" class="badge badge-sm bg-gradient-success">Apply</a>
-                          <a href="" class="badge badge-sm bg-gradient-danger">Decline</a>
-                          {{-- @else
-                          <span class="text-secondary text-xs font-weight-bold">Menunggu Manajer</span> --}}
+                          @if ($d->progress == 0 && auth()->user()->role == "Approver")
+                          <a href="{{'addProgress/'.$d->id}}" class="badge badge-sm bg-gradient-success">Apply</a>
+                          <a href="{{'decline/'.$d->id}}" class="badge badge-sm bg-gradient-danger">Decline</a>
                           @elseif ($d->progress == 1 && auth()->user()->role == "Manager")
-                          <a href="addProgress/{{$d->id}}" class="badge badge-sm bg-gradient-success">Apply</a>
-                          <a href="" class="badge badge-sm bg-gradient-danger">Decline</a>
+                          <a href="{{'addProgress/'.$d->id}}" class="badge badge-sm bg-gradient-success">Apply</a>
+                          <a href="{{'decline/'.$d->id}}" class="badge badge-sm bg-gradient-danger">Decline</a>
                           @elseif ($d->progress == 2)
                           <span class="text-secondary text-xs font-weight-bold">Selesai</span>
+                          @elseif ($d->progress < 0)
+                          <span class="text-secondary text-xs font-weight-bold">Ditolak</span>
                           @else
                           <span class="text-secondary text-xs font-weight-bold">Menunggu</span>
                           @endif

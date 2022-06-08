@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfoUserController;
 use App\Http\Controllers\OrderVehController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\RentVehController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\UserController;
@@ -92,6 +93,8 @@ Route::get('/login', function () {
 Route::resource('pegawai', DriverController::class);
 Route::resource('kendaraan', VehicleController::class);
 Route::get('pesan',[VehicleController::class, 'order']);
+Route::get('pesan_sewa',[VehicleController::class, 'order_sewa']);
+Route::get('kendaraan_sewa',[RentVehController::class, 'kendaraan_sewa']);
 Route::get('admin',[UserController::class, 'admin']);
 Route::get('laporan',[OrderVehController::class, 'laporan']);
 Route::get('addProgress/{orderVeh}',[OrderVehController::class, 'addProgress']);

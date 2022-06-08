@@ -24,7 +24,6 @@ class VehUseController extends Controller
     public function pengeluaran()
     {
         $data = VehUse::all();
-        // return $data;
         return view('aw.kendaraan.pengeluaran',compact('data'));
     }
 

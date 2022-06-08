@@ -6,6 +6,7 @@ use App\Models\Vehicle;
 use App\Http\Requests\StoreVehicleRequest;
 use App\Http\Requests\UpdateVehicleRequest;
 use App\Models\Driver;
+use App\Models\RentVeh;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
@@ -37,6 +38,22 @@ class VehicleController extends Controller
         ];
         return view('aw.order.form',compact('data'));
     }
+    public function order_sewa()
+    {
+        $tambang = [];
+        for ($i=1; $i <= 6; $i++) { 
+            array_push($tambang, 'Tambang '.$i);
+        }
+        $data = [
+            'drivers' => Driver::get(['name','id']),
+            'rent' => RentVeh::all(),
+            'apprs' => User::where('role','approver')->get(['name','id']),
+            'tambang' => $tambang,
+        ];
+        return view('aw.order.form2',compact('data'));
+    }
+
+    
 
 
     /**

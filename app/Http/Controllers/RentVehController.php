@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\RentVeh;
 use App\Http\Requests\StoreRentVehRequest;
 use App\Http\Requests\UpdateRentVehRequest;
+use Illuminate\Http\Request;
 
 class RentVehController extends Controller
 {
@@ -18,6 +19,12 @@ class RentVehController extends Controller
         $data = RentVeh::all();
         return $data;
         // return view('rentVeh.index',compact('data'));
+    }
+
+    public function kendaraan_sewa()
+    {
+        $data = RentVeh::all();
+        return view('aw.kendaraan.sewa',compact('data'));
     }
 
     /**
@@ -37,7 +44,7 @@ class RentVehController extends Controller
      * @param  \App\Http\Requests\StoreRentVehRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreRentVehRequest $request)
+    public function store(Request $request)
     {
         $rentVeh = RentVeh::create($request->all());
         return $rentVeh;

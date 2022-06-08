@@ -10,7 +10,7 @@
             <div class="card-header pb-0">
               <div class="d-flex flex-row justify-content-between">
                 <div>
-                  <h6>Pengeluaran Table</h6>
+                  <h6>Kendaraan Table</h6>
                 </div>
                 <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Tambah</a>
               </div>
@@ -21,13 +21,11 @@
                   <thead>
                     <tr>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Kendaraan</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Driver</th>
-                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7 ps-2">Type</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Note</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Fuel</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Spend</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date Created</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name & Brand</th>
+                        <th class="text-uppercase text-secondary text_center text-xxs font-weight-bolder opacity-7">License Code</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Carry</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Owner</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Added</th>
                       <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
@@ -39,26 +37,23 @@
                             </td>
                             <td>
                               <div class="d-flex px-2 py-1">
+                                <div>
+                                  <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user1">
+                                </div>
                                 <div class="d-flex flex-column justify-content-center">
-                                  <h6 class="mb-0 text-sm">{{$d->order?->vehicle->name}}</h6>
-                                  <p class="text-xs text-secondary mb-0">{{$d->order?->vehicle->brand}}</p>
+                                  <h6 class="mb-0 text-sm">{{$d->name}}</h6>
+                                  <p class="text-xs text-secondary mb-0">{{$d->brand}}</p>
                                 </div>
                               </div>
                             </td>
-                            <td>
-                              <p class="text-xs font-weight-semibold mb-0">{{$d->order?->driver->name}}</p>
-                            </td>
-                            <td>
-                              <h6 class="mb-0 text-sm text-center">{{$d->type}}</h6>
-                            </td>
-                            <td>
-                              <p class="text-xs font-weight-semibold mb-0">{{$d->note}}</p>
-                            </td>
+                          <td>
+                              <h6 class="mb-0 text-sm text-center">{{$d->id}}</h6>
+                          </td>
                         <td>
-                          <p class="text-xs font-weight-semibold mb-0">{{$d->fuel}}</p>
+                          <p class="text-xs font-weight-bold text-sm mb-0">{{strtoupper($d->carry)}}</p>
                         </td>
-                        <td>
-                          <p class="text-xs text-center font-weight-semibold mb-0">{{$d->spend}}</p>
+                        <td class="align-middle text-center text-sm">
+                          <span class="badge badge-sm bg-gradient-{{$d->owner=="Pusat" ? "primary" : "info"}}">{{$d->owner}}</span>
                         </td>
                         <td class="align-middle text-center">
                           <span class="text-secondary text-xs font-weight-bold">{{date('Y-m-d',strtotime($d->created_at))}}</span>

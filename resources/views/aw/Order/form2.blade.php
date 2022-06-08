@@ -126,20 +126,10 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="vehicle" class="form-control-label">{{ __('Kendaraan milik Sendiri/Sewa') }}</label>
-                                    <select class="form-select" id="vehicle" name="vehicle_id" aria-label="Default select example">
-                                        <option selected value="">{{ __('Pilih Kepemilikan') }}</option>
-                                            <option value="sendiri">Sendiri</option>
-                                            <option value="sewa">Sewa</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
                                     <label for="vehicle" class="form-control-label">{{ __('Kendaraan') }}</label>
-                                    <select class="form-select" id="vehicle" name="vehicle_id" aria-label="Default select example">
+                                    <select class="form-select" id="vehicle" name="rent_id" aria-label="Default select example">
                                         <option selected value="">{{ __('Pilih Kendaraan') }}</option>
-                                        @foreach ($data['vehicle'] as $v)
+                                        @foreach ($data['rent'] as $v)
                                             <option value="{{ $v->id }}">{{ $v->name.' ('.$v->owner.')' }}</option>
                                         @endforeach
                                     </select>
@@ -224,7 +214,8 @@
         })
         btnSewa.addEventListener('click',ev=>{
             setTimeout(() => {
-                // location.href = '{{url('pesan_sewa')}}';
+                console.log('{{url('pesan_sewa')}}');
+                location.href = '{{url('pesan_sewa')}}';
             }, 800);
         })
     </script>

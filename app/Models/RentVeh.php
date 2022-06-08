@@ -10,8 +10,13 @@ class RentVeh extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
+        'name',
         'owner',
+        'brand',
         'rent_till',
         'contact',
     ];
+    protected $keyType = "string";
+    public $incrementing = false;
 }
