@@ -27,7 +27,7 @@ class DriverController extends Controller
      */
     public function create()
     {
-        return view('driver.create');
+        return view('aw.pegawai.create');
     }
 
     /**

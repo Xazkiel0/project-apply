@@ -53,7 +53,7 @@
                           <p class="text-xs font-weight-bold text-sm mb-0">{{strtoupper($d->carry)}}</p>
                         </td>
                         <td class="align-middle text-center text-sm">
-                          <span class="badge badge-sm bg-gradient-{{$d->owner=="Pusat" ? "primary" : "info"}}">{{$d->owner}}</span>
+                          <p class="text-xs font-weight-bold text-sm mb-0">{{$d->owner}}</p>
                         </td>
                         <td class="align-middle text-center">
                           <span class="text-secondary text-xs font-weight-bold">{{date('Y-m-d',strtotime($d->created_at))}}</span>

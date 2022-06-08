@@ -126,16 +126,6 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="vehicle" class="form-control-label">{{ __('Kendaraan milik Sendiri/Sewa') }}</label>
-                                    <select class="form-select" id="vehicle" name="vehicle_id" aria-label="Default select example">
-                                        <option selected value="">{{ __('Pilih Kepemilikan') }}</option>
-                                            <option value="sendiri">Sendiri</option>
-                                            <option value="sewa">Sewa</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
                                     <label for="vehicle" class="form-control-label">{{ __('Kendaraan') }}</label>
                                     <select class="form-select" id="vehicle" name="vehicle_id" aria-label="Default select example">
                                         <option selected value="">{{ __('Pilih Kendaraan') }}</option>

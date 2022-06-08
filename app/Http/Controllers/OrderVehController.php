@@ -22,8 +22,8 @@ class OrderVehController extends Controller
     }
     public function applyOrder(Request $request)
     {
-        $data = OrderVeh::create($request->all());
-        return $data;
+        OrderVeh::create($request->all());
+        return redirect()->back();
     }
     public function laporan()
     {

@@ -12,7 +12,7 @@
                 <div>
                   <h6>Pegawai Table</h6>
                 </div>
-                <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Tambah</a>
+                <a href="{{url('pegawai/create')}}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Tambah</a>
               </div>
             </div>
             <div class="card-body px-0 pt-0 pb-2">

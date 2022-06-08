@@ -63,7 +63,7 @@ class VehicleController extends Controller
      */
     public function create()
     {
-        return view('vehicle.create');
+        return view('aw.kendaraan.create');
     }
 
     /**
