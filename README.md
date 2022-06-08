@@ -1,20 +1,20 @@
-# User admin
+### User admin
     - username/email = admin@softui.com
     - password = secret
-# User Penyetuju
+### User Penyetuju
     - username/email = penyetuju@gmail.com
     - password = password
-# User Manajer
+### User Manajer
     - username/email = manajer@gmail.com
     - password = password
 
 ## Framework = Laravel
 ## DB dan PHP = Xampp 3.3.0
-# Data:
+### Data:
     - import db.sql 
 
 
-# Flow Sederhana
+### Flow Sederhana
     - Login
     - Admin Melakukan Pesan Kendaraan
     - Lalu akan masuk di laporan pesanan
