@@ -32,6 +32,10 @@ class OrderVeh extends Model
     {
         return $this->belongsTo(Vehicle::class);
     }
+    public function rent()
+    {
+        return $this->belongsTo(RentVeh::class,'rent_id');
+    }
     public function vehUses()
     {
         return $this->hasMany(VehUse::class,"order_id");

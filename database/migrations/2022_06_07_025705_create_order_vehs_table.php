@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('rent_id')->nullable();
             $table->string('vehicle_id')->nullable();
             $table->integer('progress')->default(0);
+            $table->date('date_back')->nullable();
             $table->timestamps();
         });
     }

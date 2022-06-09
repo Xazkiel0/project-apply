@@ -12,7 +12,7 @@
                 <div>
                   <h6>Pesanan Table</h6>
                 </div>
-                <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button">Export Excel</a>
+                <a href="{{url('laporan_excel')}}" class="btn bg-gradient-primary btn-sm mb-0" type="button">Export Excel</a>
               </div>
               
             </div>
@@ -24,6 +24,7 @@
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Driver Name</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Approver Name</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Vehicle Name</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Progress</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date Created</th>
@@ -53,7 +54,14 @@
                         <td>
                           <div class="d-flex px-2 py-1">
                             <div class="d-flex flex-column justify-content-center">
-                              <h6 class="mb-0 text-sm">{{$d->vehicle->name}}</h6>
+                              <h6 class="mb-0 text-sm">{{$d->vehicle_id?"Perusahaan":"Sewa"}}</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="d-flex px-2 py-1">
+                            <div class="d-flex flex-column justify-content-center">
+                              <h6 class="mb-0 text-sm">{{$d->vehicle?->name?:$d->rent?->name}}</h6>
                             </div>
                           </div>
                         </td>

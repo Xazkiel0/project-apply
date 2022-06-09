@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('brand');
             $table->enum('carry',['person','material']);
             $table->date('service_date');
-            $table->date('date_back')->nullable();
             $table->timestamps();
         });
     }

@@ -14,4 +14,8 @@ class AppLog extends Model
         'rent_till',
         'contact',
     ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -12,7 +12,7 @@
                 <div>
                   <h6>Pengeluaran Table</h6>
                 </div>
-                <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Tambah</a>
+                <a href="{{url('pengeluaran/create')}}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Tambah</a>
               </div>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
@@ -67,9 +67,15 @@
                           <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                             Edit
                           </a>|
-                          <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                            Delete
-                          </a>
+                          <form action="{{route('pengeluaran.destroy',['pengeluaran'=>$d->id])}}" method="post">
+                            @method('delete')
+                            @csrf
+                            <button type="submit">
+                              <span class="text-secondary font-weight-bold text-xs">
+                                Delete
+                              </span>
+                            </button>
+                          </form>
                         </td>
                       </tr>
                       @endforeach

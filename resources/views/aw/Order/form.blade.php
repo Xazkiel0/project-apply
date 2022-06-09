@@ -214,7 +214,7 @@
         })
         btnSewa.addEventListener('click',ev=>{
             setTimeout(() => {
-                // location.href = '{{url('pesan_sewa')}}';
+                location.href = '{{url('pesan_sewa')}}';
             }, 800);
         })
     </script>

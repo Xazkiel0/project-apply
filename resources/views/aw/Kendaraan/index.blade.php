@@ -55,7 +55,7 @@
                           <p class="text-xs font-weight-semibold mb-0">{{$d->description}}</p>
                         </td>
                         <td>
-                          <p class="text-xs font-weight-bold text-sm mb-0">{{strtoupper($d->carry)}}</p>
+                          <p class="text-xs font-weight-bold text-uppercase text-sm mb-0">{{$d->carry}}</p>
                         </td>
                         <td class="align-middle text-center text-sm">
                           <span class="badge badge-sm bg-gradient-{{$d->date_back ? "secondary" : "success"}}">{{$d->date_back?"Not Ready":"Ready"}}</span>

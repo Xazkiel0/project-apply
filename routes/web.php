@@ -13,6 +13,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\VehUseController;
 use App\Models\OrderVeh;
+use App\Models\RentVeh;
+use App\Models\VehUse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
@@ -32,9 +34,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/', [HomeController::class, 'home']);
-	Route::get('dashboard', function () {
-		return view('dashboard');
-	})->name('dashboard');
+	Route::get('dashboard', [HomeController::class,'home'])->name('dashboard');
 
 	Route::get('billing', function () {
 		return view('billing');
@@ -48,13 +48,14 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('laravel-examples/user-management');
 	})->name('user-management');
 
-	Route::get('tables', function () {
-		return view('tables');
-	})->name('tables');
+	// Route::get('tables', function () {
+	// 	return view('tables');
+	// })->name('tables');
 
-    Route::get('virtual-reality', function () {
-		return view('virtual-reality');
-	})->name('virtual-reality');
+	Route::get('excel', function () {
+		$data = OrderVeh::all();
+		return view('excel',compact('data'));
+	})->name('excel');
 
     Route::get('static-sign-in', function () {
 		return view('static-sign-in');
@@ -91,13 +92,14 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::resource('pegawai', DriverController::class);
+Route::resource('sewa', RentVehController::class);
 Route::resource('kendaraan', VehicleController::class);
+Route::resource('pengeluaran', VehUseController::class)->except(['show','update']);
 Route::get('pesan',[VehicleController::class, 'order']);
 Route::get('pesan_sewa',[VehicleController::class, 'order_sewa']);
-Route::get('kendaraan_sewa',[RentVehController::class, 'kendaraan_sewa']);
 Route::get('admin',[UserController::class, 'admin']);
+Route::get('laporan_excel',[OrderVehController::class, 'export']);
 Route::get('laporan',[OrderVehController::class, 'laporan']);
 Route::get('addProgress/{orderVeh}',[OrderVehController::class, 'addProgress']);
-Route::get('pengeluaran',[VehUseController::class, 'pengeluaran']);
 Route::get('approver',[UserController::class, 'approver']);
 Route::post('applyOrder',[OrderVehController::class, 'applyOrder']);

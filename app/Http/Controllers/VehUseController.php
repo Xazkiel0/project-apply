@@ -6,6 +6,7 @@ use App\Models\VehUse;
 use App\Http\Requests\StoreVehUseRequest;
 use App\Http\Requests\UpdateVehUseRequest;
 use App\Models\OrderVeh;
+use Illuminate\Http\Request;
 
 class VehUseController extends Controller
 {
@@ -15,13 +16,6 @@ class VehUseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $data = VehUse::all();
-        dd($data);
-        return $data;
-        // return view('VehUse.index',compact('data'))
-    }
-    public function pengeluaran()
     {
         $data = VehUse::all();
         return view('aw.kendaraan.pengeluaran',compact('data'));
@@ -34,9 +28,7 @@ class VehUseController extends Controller
      */
     public function create()
     {
-        return view('VehUse.create');
-
-        //
+        return view('aw.kendaraan.createVehUse');
     }
 
     /**
@@ -45,10 +37,11 @@ class VehUseController extends Controller
      * @param  \App\Http\Requests\StoreVehUseRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreVehUseRequest $request)
+    public function store(Request $request)
     {
-        $vehUse = VehUse::create($request->all());
-        return $vehUse;
+        $request->request->add(['photo'=>'img']);
+        VehUse::create($request->all());
+        return redirect()->back();
     }
 
     /**
@@ -82,7 +75,7 @@ class VehUseController extends Controller
      * @param  \App\Models\VehUse  $vehUse
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateVehUseRequest $request, VehUse $vehUse)
+    public function update(Request $request, VehUse $vehUse)
     {
         $vehUse->update($request->all());
         return $vehUse;
@@ -96,7 +89,9 @@ class VehUseController extends Controller
      */
     public function destroy(VehUse $vehUse)
     {
-        return $vehUse->deleteOrFail();
+
+        $vehUse->deleteOrFail();
+        return redirect()->back(); 
         
     }
 }

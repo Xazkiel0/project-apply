@@ -7,7 +7,7 @@
                 <h6 class="mb-0">{{ __('Form Tambah Pegawai') }}</h6>
             </div>
             <div class="card-body pt-4 p-3">
-                <form action="{{ url('applyOrder') }}" method="POST" role="form text-left">
+                <form action="{{ url('pegawai') }}" method="POST" role="form text-left">
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
@@ -24,7 +24,7 @@
                                 <label for="user.phone" class="form-control-label">{{ __('No Hp Pengemudi') }}</label>
                                 <div class="@error('user.phone') border border-danger rounded-3 @enderror">
                                     <input class="form-control" type="tel" placeholder="40770888444" id="number"
-                                        name="phone" value="{{ auth()->user()->phone }}">
+                                        name="phone" value="">
                                 </div>
                             </div>
                         </div>

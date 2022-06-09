@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\RentVeh;
 use App\Http\Requests\StoreRentVehRequest;
 use App\Http\Requests\UpdateRentVehRequest;
+use App\Models\Vehicle;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Date;
 
 class RentVehController extends Controller
 {
@@ -15,13 +17,6 @@ class RentVehController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $data = RentVeh::all();
-        return $data;
-        // return view('rentVeh.index',compact('data'));
-    }
-
-    public function kendaraan_sewa()
     {
         $data = RentVeh::all();
         return view('aw.kendaraan.sewa',compact('data'));
@@ -34,8 +29,7 @@ class RentVehController extends Controller
      */
     public function create()
     {
-        return view('rentVeh.create');
-        //
+        return view('aw.kendaraan.createSewa');
     }
 
     /**
@@ -46,8 +40,15 @@ class RentVehController extends Controller
      */
     public function store(Request $request)
     {
+        $dateAdded = Date::parse(date('Y-m-d H:i:s', strtotime(Date::now().' + '. 10 .' days')));
+        $subReq = [
+            'rent_till' => $dateAdded,
+            'id' => Vehicle::createLicense(7),
+        ];
+        $request->request->add($subReq);
+        
         $rentVeh = RentVeh::create($request->all());
-        return $rentVeh;
+        return redirect()->back();
     }
 
     /**

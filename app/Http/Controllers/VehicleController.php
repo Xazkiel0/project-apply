@@ -79,11 +79,12 @@ class VehicleController extends Controller
         $subReq = [
             'service_date' => $dateAdded,
             'id' => Vehicle::createLicense(7),
+            'image' => 'img'
         ];
         $request->request->add($subReq);
         
-        $vehicle = Vehicle::create($request->all());
-        return $vehicle;
+        Vehicle::create($request->all());
+        return redirect()->back();
     }
 
     /**

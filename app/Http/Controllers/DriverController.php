@@ -38,8 +38,8 @@ class DriverController extends Controller
      */
     public function store(Request $request)
     {
-        $driver = Driver::create($request->all());
-        return $driver;
+        Driver::create($request->all());
+        return redirect()->back();
     }
 
     /**

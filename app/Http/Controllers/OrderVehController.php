@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\LaporanExport;
 use App\Models\OrderVeh;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Requests\StoreOrderVehRequest;
 use App\Http\Requests\UpdateOrderVehRequest;
 use Illuminate\Http\Request;
@@ -28,18 +30,26 @@ class OrderVehController extends Controller
     public function laporan()
     {
         $data = OrderVeh::all();
-        return view('aw.Order.index',compact('data'));
+        return view('aw.Order.index', compact('data'));
+    }
+    public function export()
+    {
+        try {
+            return Excel::download(new LaporanExport, 'laporan.xlsx');
+        } catch (\Throwable $th) {
+            return redirect()->back();
+        }
     }
     public function addProgress(OrderVeh $orderVeh)
     {
-        $orderVeh->update(["progress"=>intval($orderVeh->progress)+1]);
+        $orderVeh->update(["progress" => intval($orderVeh->progress) + 1]);
 
         return redirect()->back();
         //
     }
     public function decline(OrderVeh $orderVeh)
     {
-        $orderVeh->update(["progress"=>-1]);
+        $orderVeh->update(["progress" => -1]);
 
         return redirect()->back();
     }
@@ -75,7 +85,7 @@ class OrderVehController extends Controller
      */
     public function show(OrderVeh $orderVeh)
     {
-        return view('OrderVeh.create',compact('OrderVeh'));
+        return view('OrderVeh.create', compact('OrderVeh'));
         //
     }
 
@@ -87,7 +97,7 @@ class OrderVehController extends Controller
      */
     public function edit(OrderVeh $orderVeh)
     {
-        return view('OrderVeh.create',compact('OrderVeh'));
+        return view('OrderVeh.create', compact('OrderVeh'));
         //
     }
 

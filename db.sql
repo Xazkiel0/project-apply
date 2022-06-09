@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2022 at 08:43 AM
+-- Generation Time: Jun 09, 2022 at 08:29 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -36,6 +36,20 @@ CREATE TABLE `app_logs` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `app_logs`
+--
+
+INSERT INTO `app_logs` (`id`, `user_id`, `action`, `log`, `created_at`, `updated_at`) VALUES
+(1, 2, 'update', 'Unde voluptas rem.', '2022-06-08 18:59:11', '2022-06-08 18:59:11'),
+(2, 3, 'create', 'Doloribus dolorum.', '2022-06-08 18:59:11', '2022-06-08 18:59:11'),
+(3, 2, 'create', 'Iste corporis.', '2022-06-08 18:59:11', '2022-06-08 18:59:11'),
+(4, 2, 'delete', 'Minus animi id.', '2022-06-08 18:59:11', '2022-06-08 18:59:11'),
+(5, 2, 'create', 'Quos eum.', '2022-06-08 18:59:38', '2022-06-08 18:59:38'),
+(6, 3, 'delete', 'Expedita maiores.', '2022-06-08 18:59:38', '2022-06-08 18:59:38'),
+(7, 2, 'update', 'Aut aut voluptatem.', '2022-06-08 18:59:38', '2022-06-08 18:59:38'),
+(8, 3, 'delete', 'Nesciunt ex in.', '2022-06-08 18:59:38', '2022-06-08 18:59:38');
+
 -- --------------------------------------------------------
 
 --
@@ -57,14 +71,19 @@ CREATE TABLE `drivers` (
 --
 
 INSERT INTO `drivers` (`id`, `name`, `address`, `phone`, `from`, `created_at`, `updated_at`) VALUES
-(1, 'Gerardo Lind', '37825 Jeffery Club\nLake Kelvin, IA 74039-8909', '(570) 990-9359', 'Pusat', '2022-06-07 22:48:08', '2022-06-07 22:48:08'),
-(2, 'Catharine Casper Jr.', '29292 Gregoria Drive\nKuvalisbury, CO 55027', '435-748-5338', 'Pusat', '2022-06-07 22:48:08', '2022-06-07 22:48:08'),
-(3, 'Stanley Schowalter', '330 Wehner Course Suite 329\nParkerville, UT 01900', '608.875.4635', 'Cabang', '2022-06-07 22:48:08', '2022-06-07 22:48:08'),
-(4, 'Savannah Ullrich', '4598 Gottlieb Locks Suite 877\nSouth Geovanny, MD 49057-7297', '986.654.3430', 'Cabang', '2022-06-07 22:48:08', '2022-06-07 22:48:08'),
-(5, 'Arturo Schowalter Jr.', '1222 Stokes Oval\nLake Jamaalland, PA 79278', '(785) 746-5591', 'Pusat', '2022-06-07 22:49:00', '2022-06-07 22:49:00'),
-(6, 'Sandrine Swaniawski V', '481 Jess Isle Suite 107\nEast Floy, AZ 52891-0256', '(336) 438-3159', 'Cabang', '2022-06-07 22:49:00', '2022-06-07 22:49:00'),
-(7, 'Mr. Devin Morar', '33151 Luella Shoals\nSigmundberg, LA 09870-4114', '754-915-7987', 'Cabang', '2022-06-07 22:49:00', '2022-06-07 22:49:00'),
-(8, 'Dr. Rusty Schmitt', '1429 Blick Roads Suite 271\nNorth Lillaburgh, ME 57256', '941.400.9900', 'Cabang', '2022-06-07 22:49:00', '2022-06-07 22:49:00');
+(1, 'Jayde Koepp', '246 O\'Connell Common\nHettieberg, TX 67662', '+1-757-359-8442', 'Pusat', '2022-06-08 03:14:16', '2022-06-08 03:14:16'),
+(2, 'Alexis Konopelski', '3745 Balistreri Summit Suite 092\nMitchellton, OR 88447', '+16467279695', 'Pusat', '2022-06-08 03:14:16', '2022-06-08 03:14:16'),
+(3, 'Mr. Emery Champlin', '2356 Upton Dam\nLake Charley, RI 61088-6707', '810-882-6959', 'Pusat', '2022-06-08 03:14:17', '2022-06-08 03:14:17'),
+(4, 'Ms. Margarita Gottlieb', '51855 Maryse Corners\nSouth Erich, NM 27585', '(706) 257-0975', 'Cabang', '2022-06-08 03:14:17', '2022-06-08 03:14:17'),
+(5, 'Pegawai 1', 'JI Kh Hasan Mimbar', '238239', 'Pusat', '2022-06-08 05:05:42', '2022-06-08 05:05:42'),
+(7, 'Kari Bogisich', '2026 Friesen Street\nPort Camila, NH 51080', '(917) 471-2417', 'Cabang', '2022-06-08 18:59:09', '2022-06-08 18:59:09'),
+(8, 'Paxton Labadie', '1089 Kessler Street\nO\'Harachester, AR 05567-7042', '458-790-3312', 'Pusat', '2022-06-08 18:59:09', '2022-06-08 18:59:09'),
+(9, 'Prof. Marvin Mraz Jr.', '243 Geovanni Rapids Apt. 049\nSouth Tracey, TN 84970', '+1 (351) 252-4652', 'Cabang', '2022-06-08 18:59:10', '2022-06-08 18:59:10'),
+(10, 'Mr. Hector Ritchie V', '662 Kutch Wall\nNorth Hattieshire, TX 69385-9040', '678.751.6750', 'Pusat', '2022-06-08 18:59:10', '2022-06-08 18:59:10'),
+(11, 'Dr. Nash Frami Sr.', '7774 Ismael Forks\nSouth Simeonbury, KY 35212-8438', '+15103174325', 'Pusat', '2022-06-08 18:59:37', '2022-06-08 18:59:37'),
+(12, 'Susana Welch Sr.', '38389 Ellen Route Suite 309\nRandishire, ND 03359-0161', '+16789785209', 'Pusat', '2022-06-08 18:59:37', '2022-06-08 18:59:37'),
+(13, 'Karlee Russel', '581 Kub Corners\nEast Monica, FL 98905', '+1 (636) 710-1990', 'Cabang', '2022-06-08 18:59:37', '2022-06-08 18:59:37'),
+(14, 'Erna Langworth', '21971 Bethel Union Suite 963\nNew Yadiramouth, IN 12173', '+1 (458) 394-6155', 'Pusat', '2022-06-08 18:59:37', '2022-06-08 18:59:37');
 
 -- --------------------------------------------------------
 
@@ -124,7 +143,8 @@ CREATE TABLE `order_vehs` (
   `note` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `rent_id` int(11) DEFAULT NULL,
   `vehicle_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `progress` int(11) NOT NULL DEFAULT 1,
+  `progress` int(11) NOT NULL DEFAULT 0,
+  `date_back` date DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -133,10 +153,11 @@ CREATE TABLE `order_vehs` (
 -- Dumping data for table `order_vehs`
 --
 
-INSERT INTO `order_vehs` (`id`, `driver_id`, `approver_id`, `tambang`, `note`, `rent_id`, `vehicle_id`, `progress`, `created_at`, `updated_at`) VALUES
-(5, 5, 1, 'Tambang 4', NULL, NULL, 'MN7NBHI', 2, '2022-06-07 23:01:00', '2022-06-07 23:41:04'),
-(6, 5, 3, 'Tambang 4', NULL, NULL, 'ZIIUM6S', 0, '2022-06-07 23:01:18', '2022-06-07 23:01:18'),
-(7, 3, 3, 'Tambang 4', NULL, NULL, 'ZIIUM6S', 0, '2022-06-07 23:01:27', '2022-06-07 23:01:27');
+INSERT INTO `order_vehs` (`id`, `driver_id`, `approver_id`, `tambang`, `note`, `rent_id`, `vehicle_id`, `progress`, `date_back`, `created_at`, `updated_at`) VALUES
+(5, 2, 2, 'Tambang 3', 'coba 1', NULL, 'O1R71RS', 2, NULL, '2022-06-08 17:00:27', '2022-06-08 22:27:12'),
+(6, 3, 2, 'Tambang 4', 'coba 2', NULL, 'RZGAMKT', 0, NULL, '2022-06-08 04:09:54', '2022-06-08 04:09:54'),
+(7, 4, 2, 'Tambang 5', 'coba 3', NULL, 'RZGAMKT', 0, NULL, '2022-06-08 04:10:29', '2022-06-08 04:10:29'),
+(14, 4, 2, 'Tambang 5', NULL, 2, NULL, 2, NULL, '2022-06-08 18:59:37', '2022-06-08 18:59:37');
 
 -- --------------------------------------------------------
 
@@ -175,10 +196,13 @@ CREATE TABLE `personal_access_tokens` (
 --
 
 CREATE TABLE `rent_vehs` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `owner` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `brand` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `carry` enum('person','material') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `owner` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Perusahaan 1',
   `rent_till` date NOT NULL,
-  `contact` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -187,11 +211,20 @@ CREATE TABLE `rent_vehs` (
 -- Dumping data for table `rent_vehs`
 --
 
-INSERT INTO `rent_vehs` (`id`, `owner`, `rent_till`, `contact`, `created_at`, `updated_at`) VALUES
-(1, 'Padberg', '2022-06-10', '(510) 408-0366', '2022-06-07 22:49:01', '2022-06-07 22:49:01'),
-(2, 'Nitzsche', '2022-06-11', '820-302-1014', '2022-06-07 22:49:01', '2022-06-07 22:49:01'),
-(3, 'Conroy', '2022-06-11', '+1-334-717-7841', '2022-06-07 22:49:01', '2022-06-07 22:49:01'),
-(4, 'Hilpert', '2022-06-19', '+1.623.652.6743', '2022-06-07 22:49:02', '2022-06-07 22:49:02');
+INSERT INTO `rent_vehs` (`id`, `name`, `brand`, `carry`, `owner`, `rent_till`, `contact`, `created_at`, `updated_at`) VALUES
+('2ZCDDT7', 'Glenda', 'Douglas', 'material', 'Runolfsdottir', '2022-06-17', '1-605-616-9051', '2022-06-08 18:59:37', '2022-06-08 18:59:37'),
+('7FJ5ESV', 'Bridgette', 'Sanford', 'material', 'Balistreri', '2022-06-17', '774.496.1174', '2022-06-08 03:14:18', '2022-06-08 03:14:18'),
+('9AY7VFG', 'Zelda', 'Marks', 'material', 'Harvey', '2022-06-21', '256-414-9108', '2022-06-08 18:59:37', '2022-06-08 18:59:37'),
+('9YMKOK0', 'Maximo', 'Kling', 'material', 'Mayert', '2022-06-24', '(239) 622-1632', '2022-06-08 18:59:10', '2022-06-08 18:59:10'),
+('E8PH2BE', 'Briana', 'Zieme', 'person', 'Kunze', '2022-06-24', '407.900.9826', '2022-06-08 18:59:10', '2022-06-08 18:59:10'),
+('EXJMTVS', 'Kendaraan Sewa 1', 'Gatau', 'person', 'Gatau', '2022-06-18', '2392389', '2022-06-08 05:30:30', '2022-06-08 05:30:30'),
+('HG3B6FM', 'Gianni', 'Kuvalis', 'person', 'Stracke', '2022-06-26', '312-868-8490', '2022-06-08 18:59:10', '2022-06-08 18:59:10'),
+('KF0XQN3', 'Richie', 'Kreiger', 'person', 'Schmitt', '2022-06-23', '(415) 960-5582', '2022-06-08 03:14:18', '2022-06-08 03:14:18'),
+('MBMGKPB', 'Timmothy', 'Fahey', 'person', 'Feil', '2022-06-18', '+1.925.856.0806', '2022-06-08 03:14:18', '2022-06-08 03:14:18'),
+('NYCJJL7', 'Denis', 'Farrell', 'material', 'Bruen', '2022-06-10', '(540) 313-4040', '2022-06-08 18:59:37', '2022-06-08 18:59:37'),
+('XBUCPET', 'Precious', 'Auer', 'person', 'Kovacek', '2022-06-15', '1-986-423-3196', '2022-06-08 18:59:10', '2022-06-08 18:59:10'),
+('Y4B7JAD', 'Malinda', 'Quitzon', 'person', 'Reilly', '2022-06-21', '262-816-8600', '2022-06-08 18:59:37', '2022-06-08 18:59:37'),
+('ZQNOMRZ', 'Morgan', 'Hills', 'material', 'Beahan', '2022-06-12', '657.465.2902', '2022-06-08 03:14:18', '2022-06-08 03:14:18');
 
 -- --------------------------------------------------------
 
@@ -218,9 +251,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `from`, `role`, `about_me`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Aidan Ortiz', 'penyetuju@gmail.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, 'Pusat', 'Approver', NULL, 'voe8P1k7hpww90F8LznWEoW1k2NT1TNd8MgV0DobhD4NttZIer1PqvznhhO7', '2022-06-07 22:48:07', '2022-06-07 22:48:07'),
-(2, 'admin', 'admin@softui.com', '$2y$10$NSVEHjIMM9i0qoODB.yGVOWHbnFVoqKsjt6m0pzp4HtiVa15SeOB.', NULL, 'Pusat', 'Admin', NULL, NULL, '2022-06-07 22:48:55', '2022-06-07 22:48:55'),
-(3, 'Annette Hammes', 'manajer@gmail.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, 'Pusat', 'Manager', NULL, 'j855BgopHO', '2022-06-07 22:49:00', '2022-06-07 22:49:00');
+(1, 'admin', 'admin@gmail.com', '$2y$10$sfq60OGtnsUBlru0VaAW1eglV5BokW/FcMI3UvfXIEoEo8IZMT.m.', NULL, 'Pusat', 'Admin', NULL, NULL, '2022-06-08 03:16:00', '2022-06-08 03:16:00'),
+(2, 'penyetuju', 'penyetuju@gmail.com', '$2y$10$j9/vyfsJLNZ4wm3AIEDQMueGRlfScmb4zMACgUMtKAFS9yQahsixy', NULL, 'Pusat', 'Approver', NULL, NULL, '2022-06-08 03:16:00', '2022-06-08 03:16:00'),
+(3, 'manajer', 'manajer@gmail.com', '$2y$10$oT4xyMpljnNePyucU8tMkeQndNXnnmwWNQ1nFferb.NrQIh0aiNHi', NULL, 'Pusat', 'Manager', NULL, NULL, '2022-06-08 03:16:01', '2022-06-08 03:16:01');
 
 -- --------------------------------------------------------
 
@@ -237,7 +270,6 @@ CREATE TABLE `vehicles` (
   `brand` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `carry` enum('person','material') COLLATE utf8mb4_unicode_ci NOT NULL,
   `service_date` date NOT NULL,
-  `date_back` date DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -246,15 +278,20 @@ CREATE TABLE `vehicles` (
 -- Dumping data for table `vehicles`
 --
 
-INSERT INTO `vehicles` (`id`, `name`, `image`, `owner`, `description`, `brand`, `carry`, `service_date`, `date_back`, `created_at`, `updated_at`) VALUES
-('8GDDLKQ', 'Hayley Schmitt', 'img', 'Pusat', 'Facilis iste a est ipsam.', 'Eryn', 'person', '2022-06-08', NULL, '2022-06-07 22:49:00', '2022-06-07 22:49:00'),
-('A5M9TIS', 'Jeffrey Dickinson', 'img', 'Pusat', 'Et soluta eaque in ducimus.', 'Mariah', 'person', '2022-06-08', NULL, '2022-06-07 22:49:00', '2022-06-07 22:49:00'),
-('BISZRCD', 'Baby Eichmann', 'img', 'Pusat', 'Nemo est aut corporis.', 'Bernice', 'person', '2022-06-08', NULL, '2022-06-07 22:48:07', '2022-06-07 22:48:07'),
-('ECS4B0P', 'Ernestine McClure', 'img', 'Pusat', 'Quia cumque ab nisi esse ea.', 'Alba', 'person', '2022-06-08', NULL, '2022-06-07 22:49:00', '2022-06-07 22:49:00'),
-('MN7NBHI', 'Anastasia Williamson', 'img', 'Pusat', 'Quis quisquam beatae earum.', 'Peyton', 'material', '2022-06-08', NULL, '2022-06-07 22:48:07', '2022-06-07 22:48:07'),
-('T06UGLY', 'Bart Wunsch', 'img', 'Pusat', 'Qui dolor totam qui voluptas.', 'Giles', 'person', '2022-06-08', NULL, '2022-06-07 22:48:07', '2022-06-07 22:48:07'),
-('UJICXFS', 'Deron Botsford', 'img', 'Pusat', 'At ipsum consequatur dolorum.', 'Enrico', 'material', '2022-06-08', NULL, '2022-06-07 22:49:00', '2022-06-07 22:49:00'),
-('ZIIUM6S', 'Judah Gleason V', 'img', 'Cabang', 'Veniam eos aliquid sunt.', 'Kennedi', 'person', '2022-06-08', NULL, '2022-06-07 22:48:07', '2022-06-07 22:48:07');
+INSERT INTO `vehicles` (`id`, `name`, `image`, `owner`, `description`, `brand`, `carry`, `service_date`, `created_at`, `updated_at`) VALUES
+('06MMFLX', 'Miguel Harber', 'img', 'Cabang', 'Quo neque cum nam.', 'Florence', 'material', '2022-06-09', '2022-06-08 18:59:37', '2022-06-08 18:59:37'),
+('2KFZIOT', 'Kendall Cole DDS', 'img', 'Cabang', 'Nobis dolorum atque a.', 'Michel', 'person', '2022-06-09', '2022-06-08 18:59:09', '2022-06-08 18:59:09'),
+('DJGFXQ5', 'Felipa Hessel V', 'img', 'Pusat', 'Explicabo aut et et magnam.', 'Halie', 'person', '2022-06-09', '2022-06-08 18:59:36', '2022-06-08 18:59:36'),
+('DMK50XC', 'Dane Jerde', 'img', 'Pusat', 'Quia sed voluptas ipsam ut.', 'Leann', 'material', '2022-06-09', '2022-06-08 18:59:09', '2022-06-08 18:59:09'),
+('F5ZNOQP', 'Alayna Keebler II', 'img', 'Cabang', 'Eius quam qui ex eaque.', 'Jacky', 'material', '2022-06-09', '2022-06-08 18:59:09', '2022-06-08 18:59:09'),
+('GBJGOHT', 'Kendaraan 1', 'img', 'Cabang', 'mobil', 'Toyota', 'person', '2022-06-18', '2022-06-08 05:12:31', '2022-06-08 05:12:31'),
+('J8HWCXN', 'Amara Gottlieb', 'img', 'Pusat', 'Omnis aut temporibus aperiam.', 'Minerva', 'person', '2022-06-09', '2022-06-08 18:59:09', '2022-06-08 18:59:09'),
+('MM5J5IX', 'Dianna Champlin', 'img', 'Pusat', 'Aut est id fugiat ducimus.', 'Jessie', 'person', '2022-06-08', '2022-06-08 03:14:16', '2022-06-08 03:14:16'),
+('N1C9FTR', 'Jacinto Kutch', 'img', 'Cabang', 'Quis voluptatem et qui.', 'Mackenzie', 'person', '2022-06-09', '2022-06-08 18:59:36', '2022-06-08 18:59:36'),
+('O1R71RS', 'Jaydon Ferry', 'img', 'Cabang', 'Ducimus est ab nulla.', 'Kyleigh', 'person', '2022-06-08', '2022-06-08 03:14:16', '2022-06-08 03:14:16'),
+('RZGAMKT', 'Melvin Reichert', 'img', 'Cabang', 'Qui id aut voluptatibus.', 'Clarabelle', 'person', '2022-06-08', '2022-06-08 03:14:16', '2022-06-08 03:14:16'),
+('SFJNCKK', 'Camila Hodkiewicz', 'img', 'Pusat', 'Ab id quaerat debitis modi.', 'Ryan', 'material', '2022-06-08', '2022-06-08 03:14:16', '2022-06-08 03:14:16'),
+('UOFTVAH', 'Kendall Hintz', 'img', 'Pusat', 'Modi dolorum dicta enim et.', 'Jennyfer', 'person', '2022-06-09', '2022-06-08 18:59:36', '2022-06-08 18:59:36');
 
 -- --------------------------------------------------------
 
@@ -264,7 +301,7 @@ INSERT INTO `vehicles` (`id`, `name`, `image`, `owner`, `description`, `brand`, 
 
 CREATE TABLE `veh_uses` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `order_id` int(11) NOT NULL,
+  `order_id` int(11) DEFAULT NULL,
   `type` enum('fuel','repair','other') COLLATE utf8mb4_unicode_ci NOT NULL,
   `spend` int(11) NOT NULL,
   `fuel` int(11) NOT NULL,
@@ -279,10 +316,10 @@ CREATE TABLE `veh_uses` (
 --
 
 INSERT INTO `veh_uses` (`id`, `order_id`, `type`, `spend`, `fuel`, `note`, `photo`, `created_at`, `updated_at`) VALUES
-(1, 10, 'repair', 6883, 1498, NULL, NULL, '2022-06-07 22:49:02', '2022-06-07 22:49:02'),
-(2, 3, 'fuel', 6008, 3851, NULL, NULL, '2022-06-07 22:49:02', '2022-06-07 22:49:02'),
-(3, 9, 'other', 6727, 4102, NULL, NULL, '2022-06-07 22:49:02', '2022-06-07 22:49:02'),
-(4, 3, 'fuel', 9125, 1771, NULL, NULL, '2022-06-07 22:49:02', '2022-06-07 22:49:02');
+(1, 6, 'repair', 3248, 4780, NULL, NULL, '2022-06-08 03:14:18', '2022-06-08 03:14:18'),
+(2, 7, 'repair', 4955, 2501, NULL, NULL, '2022-06-08 03:14:18', '2022-06-08 03:14:18'),
+(5, NULL, 'fuel', 77832, 3000, NULL, NULL, '2022-06-08 18:48:40', '2022-06-08 18:48:40'),
+(10, 6, 'other', 1933, 2826, NULL, NULL, '2022-06-08 18:59:37', '2022-06-08 18:59:37');
 
 --
 -- Indexes for dumped tables
@@ -366,13 +403,13 @@ ALTER TABLE `veh_uses`
 -- AUTO_INCREMENT for table `app_logs`
 --
 ALTER TABLE `app_logs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `drivers`
 --
 ALTER TABLE `drivers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -390,19 +427,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `order_vehs`
 --
 ALTER TABLE `order_vehs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `rent_vehs`
---
-ALTER TABLE `rent_vehs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -414,7 +445,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `veh_uses`
 --
 ALTER TABLE `veh_uses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

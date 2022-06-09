@@ -100,6 +100,7 @@
             <div class="card">
                 <div class="card-header pb-0 px-3">
                     <h6 class="mb-0">{{ __('Form Persetujuan Kendaraan') }}</h6>
+                    <p>Jika ingin sewa kendaraan baru, silahkan tambahkan dulu di form Tambah Kendaraan Sewa.</p>
                 </div>
                 <div class="card-body pt-4 p-3">
                     <form action="{{url('applyOrder')}}" method="POST" role="form text-left">

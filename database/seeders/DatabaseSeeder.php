@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\AppLog;
 use App\Models\Driver;
 use App\Models\OrderVeh;
 use App\Models\RentVeh;
@@ -26,6 +27,7 @@ class DatabaseSeeder extends Seeder
         OrderVeh::factory(4)->create();
         RentVeh::factory(4)->create();
         VehUse::factory(4)->create();
+        AppLog::factory(4)->create();
 
         $data = [
             [

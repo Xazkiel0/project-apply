@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('veh_uses', function (Blueprint $table) {
             $table->id();
-            $table->integer('order_id');
+            $table->integer('order_id')->nullable();
             $table->enum('type',['fuel','repair','other']);
             $table->integer('spend');
-            $table->integer('fuel');
+            $table->integer('fuel')->nullable();
             $table->string('note')->nullable();
             $table->string('photo')->nullable();
             $table->timestamps();
