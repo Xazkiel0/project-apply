@@ -16,6 +16,8 @@
     - import db.sql 
     atau
     - migrate laravel
+    
+Data gambar dibawah tidak sama dengan data asli, hanya gambaran kasar
 ![Gambaran Data](data.png)
 
 ### Flow Sederhana
